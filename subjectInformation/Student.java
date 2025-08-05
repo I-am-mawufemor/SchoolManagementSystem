@@ -1,4 +1,6 @@
+package subjectInformation;
 import java.time.LocalDate;
+import java.util.regex.Pattern;
 
 public class Student {
     private String name;
@@ -21,20 +23,45 @@ public class Student {
 
     // setters
     public void setName(String name){
-        this.name = name;
+        if(name != null && name.isEmpty()){
+            this.name = name;
+        }else{
+            System.out.println("Invalid name");
+        }
+        
     }
     public void setDatefBirth(LocalDate dateOfBirth){
         this.dateOfBirth = dateOfBirth;
     }
+
     public void setParents(String parents){
-        this.parents = parents;
+        if (parents != null && parents.isEmpty()) {
+            this.parents = parents;
+        }else{
+            System.out.println("Invalid parent name");
+        }
+       
     }
 
-    public void setTelephone(String telephone){
-        this.telephone = telephone;
+    public void setPhoneNumber(String telephone) {
+        // Basic regex: allows +233 followed by 9 digits OR 0 followed by 9 digits
+        if (telephone != null && telephone.matches("^(\\+233|0)[0-9]{9}$")) {
+            this.telephone = telephone;
+        } else {
+            System.out.println("Invalid phone number format. Use +233XXXXXXXXX or 0XXXXXXXXX.");
+        }
     }
+    
     public void setEmail(String email){
-        this.email = email;
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        if(email != null && Pattern.matches(emailRegex, email)){
+          
+            this.email = email;
+        }
+        else {
+            System.out.println("Invalid email format");
+        }
+        
     }
 
     
