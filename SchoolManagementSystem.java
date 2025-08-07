@@ -5,6 +5,32 @@ import java.util.Scanner;
 public class SchoolManagementSystem {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+                
+        //obtain school information   
+        //prompt to enter name of school, address, email, telephone number, location, year established and other details 
+        System.out.print("Enter name of school: ");
+        String nameOfSchool = scanner.nextLine();  
+       
+        System.out.print("Enter address: ");
+        String address = scanner.nextLine();
+
+        System.out.print("Enter phone number of school: ");
+        String phoneNumber = scanner.nextLine();
+
+        System.out.print("Enter email address: ");
+        String emailAddress = scanner.nextLine();
+
+        System.out.print("Enter name of teacher: ");
+        String teacher = scanner.nextLine();
+
+        System.out.print("Enter type of school: ");
+        String schoolType = scanner.nextLine();
+
+        System.out.print("Enter where school is located: ");
+        String location = scanner.nextLine();
+
+        School schoolInfo = new School(nameOfSchool, address, phoneNumber, emailAddress, teacher,  schoolType, location);
+        System.out.print(schoolInfo);
 
         // Prompt user to enter number of students
         System.out.print("Enter number of students: ");

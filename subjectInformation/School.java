@@ -1,6 +1,6 @@
 package subjectInformation;
 
-import java.time.LocalDate;
+// import java.time.LocalDate;
 import java.util.regex.Pattern;
 
 public class School {
@@ -9,7 +9,7 @@ public class School {
     private String phoneNumber;
     private String email;
     private String principalName;
-    private LocalDate establishedYear;
+    // private LocalDate establishedYear;
     private String schoolType; // e.g., Primary, Secondary, etc.
     private String location;
 
@@ -18,14 +18,13 @@ public class School {
     }
 
     // Parameterized constructor
-    public School(String name, String address, String phoneNumber, String email, String principalName,LocalDate establishedYear, String schoolType, String location) {
+    public School(String name, String address, String phoneNumber, String email, String principalName,String schoolType, String location) {
 
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.principalName = principalName;
-        this.establishedYear = establishedYear;
         this.schoolType = schoolType;
     
         this.location = location;
@@ -77,14 +76,14 @@ public class School {
         }
     }
 
-    public void setEstablishedYear(LocalDate establishedYear) {
+    /*public void setEstablishedYear(LocalDate establishedYear) {
         if(establishedYear != null && establishedYear.isBefore(LocalDate.now())) {
             this.establishedYear = establishedYear;
         }else{
             System.out.println("Invalid established year");
         }
         
-    }
+    } */ 
     public void setSchoolType(String schoolType){
         if (schoolType != null && schoolType.isEmpty()) {
             this.schoolType = schoolType;
@@ -120,15 +119,21 @@ public class School {
         return principalName;
     }
 
-    public LocalDate getEstablishedYear(){
+    /* public LocalDate getEstablishedYear(){
         return establishedYear;
-    }
+    }*/ 
     public String getSchoolType(){
         return schoolType;
     }
 
     public String getLocation(){
         return location;
+    }
+
+    public String toString(){
+        return "Name of School: "+ name + "\nAddress" +address+ "\nPhone Number: "+phoneNumber+ 
+        "\nEmail: " + email + "\nName of principal: "+principalName +  "\nSchool Type: "
+        + schoolType + "\nLocation: "+ location; 
     }
 }
 
