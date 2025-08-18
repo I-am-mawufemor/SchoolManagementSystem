@@ -1,3 +1,4 @@
+package assementAndGrading;
 public enum AssessmentGrading {
     Excellent(1),
     VeryGood(2),

@@ -1,6 +1,7 @@
-import subjectInformation.*;
 import java.time.LocalDate;
 import java.util.Scanner;
+
+import subjectSchoolInfo.*;
 
 public class SchoolManagementSystem {
     public static void main(String[] args) {

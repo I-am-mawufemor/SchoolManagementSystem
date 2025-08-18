@@ -1,4 +1,4 @@
-package subjectInformation;
+package subjectSchoolInfo;
 
 // import java.time.LocalDate;
 import java.util.regex.Pattern;
